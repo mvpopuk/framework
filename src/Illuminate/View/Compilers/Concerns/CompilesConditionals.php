@@ -383,6 +383,17 @@ trait CompilesConditionals
     }
 
     /**
+     * Compile an active class block into valid PHP.
+     *
+     * @param  string  $condition
+     * @return string
+     */
+    protected function compileActive($condition)
+    {
+        return "<?php if{$condition}: echo 'active'; endif; ?>";
+    }
+
+    /**
      * Compile the push statements into valid PHP.
      *
      * @param  string  $expression
